@@ -2,6 +2,8 @@
 
 # Dotfiles
 chezmoi_repo: "https://github.com/Phill93/dotfiles_new.git"
+chezmoi_work: False
+chezmoi_mail: ""
 
 # Dock
 dockitems_remove:

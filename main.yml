@@ -18,6 +18,18 @@
         - dock
         - adjustments
   tasks:
+    - name: Cretae chezmoi config folder
+      ansible.builtin.file:
+        path: /Users/{{ ansible_user_id }}/.config/chezmoi/
+        state: directory
+        owner: {{ ansible_user_id }}
+
+    - name: Create chezmoi config
+      ansible.builtin.template:
+        src: chezmoi.toml
+        dest: /Users/{{ ansible_user_id }}/.config/chezmoi/chezmoi.toml
+        owner: {{ ansible_user_id }} 
+
     - name: Init chezmoi # noqa no-changed-when
       ansible.builtin.command:
         cmd: "chezmoi init --apply {{ chezmoi_repo }}"

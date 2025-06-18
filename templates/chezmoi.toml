@@ -1,0 +1,3 @@
+[data]
+  work = {{ chezmoi_work }}
+  email = "{{ chezmoi_mail }}"
