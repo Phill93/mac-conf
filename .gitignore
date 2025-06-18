@@ -2,3 +2,4 @@
 roles/*
 !roles/local.*
 .cache/
+.ansible/

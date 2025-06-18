@@ -3,57 +3,53 @@
 # Homebrew
 homebrew_upgrade_all_packages: true
 homebrew_installed_packages:
-  - git
-  - zsh
-  - neovim
-  - iperf
-  - tmux
-  - wget
-  - tree
-  - wakeonlan
+  - age
   - antigen
-  - minicom
-  - pass
-  - pwgen
-  - bat
-  - prettyping
-  - diff-so-fancy
-  - noti
+  - argocd
   - assh
-  - telnet
-  - tio
+  - bat
+  - chezmoi
+  - diff-so-fancy
+  - git
   - git-extras
   - git-flow
-  - platformio
-  - age
-  - argocd
+  - iperf
   - kubernetes-cli
   - kustomize
   - mqtt-cli
+  - neovim
+  - noti
+  - pass
   - poetry
+  - prettyping
+  - pwgen
+  - sops
+  - telnet
+  - tio
+  - tmux
+  - tree
   - watch
+  - wget
+  - zsh
 homebrew_cask_apps:
-  - font-jetbrains-mono
-  - iterm2
-  - spotify
-  - alfred
-  - balenaetcher
-  - nextcloud
-  - gpg-suite-no-mail
-  - presentation
-  - visual-studio-code
-  - ferdi
-  - jetbrains-toolbox
-  - vagrant
-  - bartender
-  - caffeine
-  - viscosity
   - aldente
-  - insomnia
+  - alfred
+  - bartender
+  - font-jetbrains-mono
+  - gpg-suite-no-mail
+  - iterm2
+  - jetbrains-toolbox
+  - keepingyouawake
+  - logitech-options
   - monitorcontrol
-  - obsidian
-  - tailscale
+  - nextcloud
   - oversight
+  - presentation
+  - spotify
+  - vagrant
+  - viscosity
+  - visual-studio-code
+  - xquartz
 homebrew_taps:
   - homebrew/core
   - homebrew/cask
@@ -65,24 +61,36 @@ homebrew_taps:
 mas_signin_dialog: false
 mas_upgrade_all_apps: true
 mas_installed_apps:
-  - id: 419330170
-    name: "Moom"
-  - id: 1451685025
-    name: "WireGuard"
-  - id: 1035236694
-    name: "Commander One - file manager"
-  - id: 1295203466
-    name: "Microsoft Remote Desktop"
   - id: 1440147259
-    name: "AdGuard for Safari"
-  - id: 409201541
-    name: Pages
+    name: AdGuard for Safari
+  - id: 1616831348
+    name: Affinity Designer 2
+  - id: 1616822987
+    name: Affinity Photo 2
+  - id: 1606941598
+    name: Affinity Publisher 2
+  - id: 1035236694
+    name: Commander One
   - id: 409183694
     name: Keynote
+  - id: 441258766
+    name: Magnet
   - id: 409203825
     name: Numbers
   - id: 818195014
     name: OX Drive
+  - id: 409201541
+    name: Pages
+  - id: 429449079
+    name: Patterns
+  - id: 1276493162
+    name: reMarkable
+  - id: 1475387142
+    name: Tailscale
+  - id: 747648890
+    name: Telegram
+  - id: 1295203466
+    name: Windows App
 mas_uninstalled_apps:
   - id: 40891434
     name: iMovie

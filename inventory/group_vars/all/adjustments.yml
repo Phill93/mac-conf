@@ -1,35 +1,7 @@
 ---
 
 # Dotfiles
-dotfiles_repo: "git@github.com:Phill93/dotfiles.git"
-dotfiles_repo_version: master
-dotfiles_repo_local_destination: "~/.dotfiles"
-dotfiles_repo_accept_hostkey: true
-dotfiles_files:
-  - .zshrc
-  - .vimrc
-  - .aliases
-  - .editorconfig
-  - .functions
-  - .gitconfig
-  - .gitignore
-dotfiles_link_other:
-  - name: assh.yaml
-    target: "~/.ssh/assh.yml"
-    target_dir: "~/.ssh"
-    target_dir_mode: "0700"
-  - name: gpg-agent.conf
-    target: "~/.gnupg/gpg-agent.conf"
-    target_dir: "~/.gnupg"
-    target_dir_mode: "0700"
-  - name: gpg.conf
-    target: "~/.gnupg/gpg.conf"
-    target_dir: "~/.gnupg"
-    target_dir_mode: "0700"
-  - name: sshcontrol
-    target: "~/.gnupg/sshcontrol"
-    target_dir: "~/.gnupg"
-    target_dir_mode: "0700"
+chezmoi_repo: "https://github.com/Phill93/dotfiles_new.git"
 
 # Dock
 dockitems_remove:

@@ -1,5 +1,6 @@
 ---
-- hosts: all
+- name: Configure MacOs
+  hosts: all
   environment:
     PATH: "{{ ansible_env.PATH }}:/usr/local/bin/:/opt/homebrew/bin"
   roles:
@@ -12,18 +13,15 @@
       tags:
         - mas
         - software
-    - role: geerlingguy.dotfiles
-      tags:
-        - dotfiles
-        - adjustments
     - role: geerlingguy.mac.dock
       tags:
         - dock
         - adjustments
   tasks:
-    - name: link other dotfiles
-      include_tasks: "tasks/other_dotfiles.yml"
-      with_items: "{{ dotfiles_link_other }}"
+    - name: Init chezmoi # noqa no-changed-when
+      ansible.builtin.command:
+        cmd: "chezmoi init --apply {{ chezmoi_repo }}"
+      become: false
       tags:
         - dotfiles
         - adjustments
@@ -34,8 +32,6 @@
       register: gpg_import
       changed_when: "'imported' in gpg_import.stderr"
       become: false
-      environment:
-        - LANG: en
       tags:
         - gpg
         - adjustments
@@ -45,8 +41,6 @@
       register: gpg_sync
       changed_when: "'new signatures' in gpg_sync.stderr"
       become: false
-      environment:
-        - LANG: en
       tags:
         - gpg
         - adjustments
@@ -62,16 +56,15 @@
         - vim
         - adjustments
 
-    - name: Run Vundle Install # noqa no-handler
+    - name: Run Vundle Install # noqa no-changed-when
       ansible.builtin.command: "vim +PluginInstall +qall"
       become: false
-      when: vundle_git.changed
       tags:
         - vim
         - adjustments
   pre_tasks:
 
-    - name: Install Rosetta 2
+    - name: Install Rosetta 2 # noqa no-changed-when
       ansible.builtin.command: "softwareupdate --install-rosetta --agree-to-license"
       when: "'arm64' in ansible_machine"
       tags:
