@@ -11,7 +11,6 @@ dockitems_remove:
   - Fotos
   - FaceTime
   - Erinnerungen
-  - Notizen
   - TV
   - Musik
   - Podcasts
@@ -27,8 +26,6 @@ dockitems_persist:
     path: "/Applications/iTerm.app/"
   - name: "Spotify"
     path: "/Applications/Spotify.app/"
-  - name: "Obisidian"
-    path:  "/Applications/Obsidian.app"
 
 # GPG
 gpg_public_keys:
